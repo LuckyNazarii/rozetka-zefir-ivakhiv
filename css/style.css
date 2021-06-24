@@ -203,4 +203,19 @@ body{
 	border: none;
 	background: transparent;
 	padding-left: 48px;
+	outline: none!important;
+	outline: initial;
+
+.header__languages{
+
+}
+
+.header__languages a{
+	color: #fff;
+	text-transform: uppercase;
+
+}
+
+.header__languages .separator{
+	
 }
