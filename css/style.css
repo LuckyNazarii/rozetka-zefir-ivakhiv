@@ -24,6 +24,9 @@ body{
 	/*щоб елементи всередині були вирівняні по центру*/
 	display: flex;
 	align-items: center;
+	/*елементи поверх одного*/
+	z-index: 20;
+	position: relative;
 }
 /*контейнер щоб був флексом в хедері  */
 .header > .container{
@@ -89,18 +92,18 @@ body{
 }
 /*елемент з класом opened*/
 /*2-а риска пропадає*/
-/*.header__menu-togle.opened */
-.header__menu-togle:hover > div:nth-child(2){
+/*.header__menu-togle.opened, */
+.header__menu-togle.opened > div:nth-child(2){
 	display: none;
 }
 /*1 і 3 стрілки обертаємо*/
 /*при hover хрестик утв при наведенні, а не кліку*/
-.header__menu-togle:hover > div:nth-child(1){
+.header__menu-togle.opened > div:nth-child(1){
 	transform: translateX(-50%) rotate(45deg) ;
 	/*щоб вони перетнулись треба 1-шу опустити а 3-тю підняти*/
 	top: 50%;
 }
-.header__menu-togle:hover > div:nth-child(3){
+.header__menu-togle.opened > div:nth-child(3){
 	transform: translateX(-50%) rotate(-45deg)  ;
 
 	top: 50%;
@@ -351,4 +354,21 @@ body{
 
 .d-flex{
 	display:flex;
+}
+
+.slide-menu{
+	width: 300px;
+	height: 100vh;
+	background: #f00;
+	position: fixed;
+	top: 0;
+	left: 0;
+	box-shadow: 0 0 12 0;
+	z-index: 10;
+	transform: translateX(-100%);
+}
+.slide-menu.opened{
+	box-shadow: 0 0 12 0 #000;
+	transform: translateX(0%);
+	transition: 0.3s;
 }

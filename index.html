@@ -10,7 +10,10 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/slick.css" />
+	<link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
 
 </head>
 
@@ -110,7 +113,7 @@
 	<header class="header">
 		<div class="container">
 			<!-- Ств менюшки у вигляді рисок - блоків(3 div) -->
-			<div class="header__menu-togle opened">
+			<div class="header__menu-togle ">
 				<div> </div>
 				<div> </div>
 				<div> </div>
@@ -185,19 +188,96 @@
 				</a>		
 			</div>  
 
-			</div>
+		</div>
 
-		</header>
-		<main>
-			<!-- перелік класів йде через пробіл -->
-			<div class="container d-flex">
-				<div class="home__catalog"></div>
-				<div class="home__banner"></div>
-			</div>
-		</main>
+	</header>
+	<main>
+		<!-- перелік класів йде через пробіл -->
+		<div class="container d-flex">
+			<div class="home__catalog"></div>
+			<div class="home__banner"></div>
+		</div>
+	
+	<div class="home__banner-slider">
+	  <div img src ="https://rozetka.com.ua/news-articles-promotions/promotions/070521_samsung_m12_new.html"</div>
+	  <div>https://rozetka.com.ua/ua/news-articles-promotions/promotions/sale_140621_tefal/</div>
+	  <div>https://rozetka.com.ua/news-articles-promotions/promotions/220621_bonus_samsung/</div>
 	</div>
-	
-	
+	<!-- slide menu -->
+	<div class="slide-menu"> 
+	</div>
+	<!-- /slide menu -->
+	</main>
+</div>
+
+
+
+<script
+src="https://code.jquery.com/jquery-2.2.4.min.js"
+integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+crossorigin="anonymous"></script>
+<!-- slick slider -->
+<script type="text/javascript" src="slick/slick.min.js"></script>
+
+
+
+<script>
+
+// $(document).on('ready', function(){
+// 	alert('jQuery is ok');
+// });
+// ств об'єкта myData
+// var firstName = 'Назарій';
+// var lastName = 'Івахів';
+// var fullName =firstName+' '+lastName;
+// console.log(fullName);
+
+// клік по кнопці Знайти
+// $('.header__search form button').on('click',function(){
+// 	var searchTerm = $('.header__search form input').val();
+// 	alert(searchTerm);
+// 	});
+
+// альтернативний метод
+$(document).on('click','.header__search form button',function(){
+	var searchTerm = $('.header__search form input').val();
+	alert(searchTerm);
+});
+
+
+$(document).on('click','.header__menu-togle',function(){
+	//$(this) == $('.header__menu-togle');
+	// переключатель між станами кнопки
+	// if($(this).hasClass('opened')){
+	// 	$(this).removeClass('opened');
+	// } else{
+	// 	$(this).addClass('opened');
+	// }
+	// альтернатива до коду вище toggleClass - перемикач, інвертор
+	$(this).toggleClass('opened');
+});
+
+var myData = {
+	firstName:'Назарій',
+	lastName:'Івахів',
+	age:32
+}
+
+function fullNameFunction(first,last){
+	var fullName = first+' '+last;
+	// console.log(fullName); 
+	return fullName;
+}
+// var fullName = fullNameFunction('Назарій','Івахів');
+var fullName = fullNameFunction(myData.firstName,myData.lastName);
+
+
+
+// alert(fullName); - виведе меседж
+// alert(fullName);
+//alert(myData.age); - виведення ключа об'єкта через крапку' 
+// alert(myData.age);
+</script>
 </body>					
 
 </html>
