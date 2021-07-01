@@ -345,8 +345,8 @@ body{
 	width: 300px;
 }
 
-.home__banner{
-	background: yellow;
+.home__content{
+	/*background: yellow;*/
 	min-height: 100px;
 	width: calc(100% - 300px);
 	min-width: calc(100% - 300px);
@@ -371,4 +371,49 @@ body{
 	box-shadow: 0 0 12 0 #000;
 	transform: translateX(0%);
 	transition: 0.3s;
+}
+
+.home__banner-slider .slide-slide {
+	height: 340px;
+}
+
+/*можна через кому для декількох об'єктів задати css*/
+.home__banner-slider.prev-button,
+.home__banner-slider.next-button{
+	position: absolute;
+	top: 50%;
+	width: 40px;
+	background: rgb(255,255,255);
+	background: -moz-linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%);
+	background: -webkit-linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%);
+	background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+	transform: translateY(-50%);
+	right: 0;
+	height: 100%;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+
+}
+.home__banner-slider.prev-button svg,
+.home__banner-slider.next-button svg{
+	fill: #467faa;
+	transition: 0.3s;
+}
+.home__banner-slider.prev-button:hover svg,
+.home__banner-slider.next-button:hover svg{
+	fill: #ff7878;
+		transition: 0.3s;
+
+}
+
+.home__banner-slider.prev-button{
+	left: 0;
+	/*right: initial; - за замовчуванням для скидання */
+	right: initial;
+	/*scaleX(-1); - обертає стрілку справа наліво*/ 
+	transform: translateY(-50%) scaleX(-1);
 }
