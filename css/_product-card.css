@@ -50,7 +50,21 @@
 	height: 24px;
 	fill: #ffa900;
 }
+/*
+через пробіл пишеться клас який є десь нижче
+.product-card > .thumb -  thumb зразу після product-card
+*/
+.product-card .thumb .add-to-favourites svg.filled{
+	display: none;
+}
 
+.product-card .thumb .add-to-favourites.in-favourites svg{
+	display: none;
+}
+
+.product-card .thumb .add-to-favourites.in-favourites svg.filled{
+	display: inline-block;
+}
 .product-card .title {
 	font-size: 14px;
 	color: #333;
@@ -77,4 +91,7 @@
 	font-size: 12px;
 	color: #797878;
 	font-weight: 300;
+}
+.home__product-list ul{
+	display: flex;
 }
